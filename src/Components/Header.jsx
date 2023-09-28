@@ -20,12 +20,25 @@ const Header = () => {
         <div>
           <ul className="flex  items-center justify-between space-x-10">
             <li
-              className={`py-3 text-sm font-semibold text-gray-400  ${pathMatchRoute("/") && "text-zinc-900 border-b-4 border-red-500"}`}>
+              className={`py-3 text-sm font-semibold text-gray-400  ${
+                pathMatchRoute("/") && "text-zinc-900 border-b-4 border-red-500"
+              }`}>
               Home
             </li>
 
-            <li >Offers</li>
-            <li>Sign In</li>
+            <li
+              className={`py-3 text-sm font-semibold text-gray-400  ${
+                pathMatchRoute("/offer") &&
+                "text-zinc-900 border-b-4 border-red-500"
+              }`}>
+              Offers
+            </li>
+            <li
+              className={`py-3 text-sm font-semibold text-gray-400  ${
+                pathMatchRoute("/sign-in") && "text-zinc-900 border-b-4 border-red-500"
+              }`}>
+              Sign In
+            </li>
           </ul>
         </div>
       </header>
