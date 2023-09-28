@@ -5,10 +5,12 @@ import SignUp from "./Components/Pages/SignUp";
 import ForgotPassword from "./Components/Pages/ForgotPassword";
 import Profile from "./Components/Pages/Profile";
 import Offers from "./Components/Pages/Offers";
+import Header from "./Components/Header";
 function App() {
   return (
     <>
-      <Router>
+      <Router >
+        <Header />
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/contact" element={<SignIn />} />
