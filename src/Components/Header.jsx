@@ -20,11 +20,11 @@ const Header = () => {
         <div>
           <ul className="flex  items-center justify-between space-x-10">
             <li
-              className={`py-3 text-sm font-semibold text-gray-400 ${pathMatchRoute("/") && "text-zinc-900"}`}>
+              className={`py-3 text-sm font-semibold text-gray-400  ${pathMatchRoute("/") && "text-zinc-900 border-b-4 border-red-500"}`}>
               Home
             </li>
 
-            <li>Offers</li>
+            <li >Offers</li>
             <li>Sign In</li>
           </ul>
         </div>
