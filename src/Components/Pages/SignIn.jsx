@@ -8,12 +8,16 @@ const SignIn = () => {
       {/* this div houses both the image and the form sections */}
       <div>
         <div className="md:w-[67%] lg:w-[50%] mb-12 md:mb-6">
-          <img src={handWithKey} alt="handwithkey" className="w-full rounded-2xl"/>
+          <img
+            src={handWithKey}
+            alt="handwithkey"
+            className="w-full rounded-2xl"
+          />
         </div>
         {/* For the image */}
-        <div className="form">
-          <form className="w-full md:w-[67%] lg:w-[40%]">
-            <input type="text" />
+        <div className="w-full md:w-[67%] lg:w-[40%]">
+          <form>
+            <input className="w-full" type="text" />
           </form>
         </div>
       </div>
