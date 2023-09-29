@@ -47,7 +47,7 @@ const SignIn = () => {
             <div>
               <input
                 className="w-full w-[16rem] h-12 px-2 text-grey-600 bg-white border-2 border-gray-300 rounded-md outline-blue-500 transition ease-in-out duration-500 focus:border-blue-500 focus:shadow-md"
-                type="password"
+                type={showPassword ? "text" : "password"}
                 placeholder="Password"
                 id="password"
                 value={password}
