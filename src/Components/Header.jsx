@@ -1,6 +1,7 @@
-import { useLocation } from "react-router";
+import { useLocation, useNavigate } from "react-router";
 const Header = () => {
   const location = useLocation();
+  const navigate = useNavigate();
   function pathMatchRoute(route) {
     if (route === location.pathname) {
       return true;
@@ -15,27 +16,32 @@ const Header = () => {
             src="https://static.rdc.moveaws.com/images/logos/rdc-logo-default.svg"
             alt=""
             className=" h-5 cursor-pointer"
+            onClick={() => navigate("/")}
           />
         </div>
         <div>
           <ul className="flex  items-center justify-between space-x-10">
             <li
-              className={`py-3 text-sm font-semibold text-gray-400  ${
+              onClick={() => navigate("/")}
+              className={`cursor-pointer py-3 text-sm font-semibold text-gray-400  ${
                 pathMatchRoute("/") && "text-zinc-900 border-b-4 border-red-500"
               }`}>
               Home
             </li>
 
             <li
-              className={`py-3 text-sm font-semibold text-gray-400  ${
+              onClick={() => navigate("/offers")}
+              className={`cursor-pointer py-3 text-sm font-semibold text-gray-400  ${
                 pathMatchRoute("/offers") &&
                 "text-zinc-900 border-b-4 border-red-500"
               }`}>
               Offers
             </li>
             <li
-              className={`py-3 text-sm font-semibold text-gray-400  ${
-                pathMatchRoute("/sign-in") && "text-zinc-900 border-b-4 border-red-500"
+              onClick={() => navigate("/sign-in")}
+              className={`cursor-pointer py-3 text-sm font-semibold text-gray-400  ${
+                pathMatchRoute("/sign-in") &&
+                "text-zinc-900 border-b-4 border-red-500"
               }`}>
               Sign In
             </li>
