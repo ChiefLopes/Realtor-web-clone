@@ -6,7 +6,7 @@ const SignIn = () => {
       <h1 className="text-4xl font-bold text-center mt-6">Sign In</h1>
 
       {/* this div houses both the image and the form sections */}
-      <div>
+      <div className="flex justify-center flex-wrap">
         <div className="md:w-[67%] lg:w-[50%] mb-12 md:mb-6">
           <img
             src={handWithKey}
