@@ -28,7 +28,7 @@ const Header = () => {
 
             <li
               className={`py-3 text-sm font-semibold text-gray-400  ${
-                pathMatchRoute("/offer") &&
+                pathMatchRoute("/offers") &&
                 "text-zinc-900 border-b-4 border-red-500"
               }`}>
               Offers
