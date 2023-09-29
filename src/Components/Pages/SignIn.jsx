@@ -2,6 +2,7 @@ import { useState } from "react";
 import handWithKey from "../../../src/assets/hand-key.avif";
 
 const SignIn = () => {
+    const [showPassword, setshowPassword] = useState(false);
     // Created the form data hook
   const [formData, setFromData] = useState({
       email: "",
@@ -35,7 +36,24 @@ const SignIn = () => {
         {/* For the image */}
         <div className="w-full md:w-[67%] lg:w-[40%] lg:ml-20 ">
           <form>
-            <input className="w-full w-[16rem] h-12 px-2 text-grey-600 bg-white border-2 border-gray-300 rounded-md outline-blue-500" type="email" placeholder="Email address" id="email" value={email} onChange={onChange}/>
+            <input
+              className="w-full w-[16rem] h-12 px-2 text-grey-600 bg-white border-2 border-gray-300 rounded-md outline-blue-500 transition ease-in-out duration-500 focus:border-blue-500 focus:shadow-md"
+              type="email"
+              placeholder="Email address"
+              id="email"
+              value={email}
+              onChange={onChange}
+            />
+            <div>
+              <input
+                className="w-full w-[16rem] h-12 px-2 text-grey-600 bg-white border-2 border-gray-300 rounded-md outline-blue-500 transition ease-in-out duration-500 focus:border-blue-500 focus:shadow-md"
+                type="password"
+                placeholder="Password"
+                id="password"
+                value={password}
+                onChange={onChange}
+              />
+            </div>
           </form>
         </div>
       </div>
