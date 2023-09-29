@@ -25,7 +25,7 @@ const SignIn = () => {
 
       {/* this div houses both the image and the form sections */}
       <div className="flex justify-center  flex-wrap items-center py-12 px-6 max-w-5xl mx-auto">
-        <div className="md:w-[67%] lg:w-[50%] mb-12 md:mb-6 ">
+        <div className="md:w-[67%] lg:w-[40%] mb-12 md:mb-6 ">
           <img
             src={handWithKey}
             alt="handwithkey"
