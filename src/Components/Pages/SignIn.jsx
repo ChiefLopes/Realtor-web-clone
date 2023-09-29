@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { AiOutlineEye, AiOutlineEyeInvisible } from "react-icons/ai"; 
 import handWithKey from "../../../src/assets/hand-key.avif";
 
 const SignIn = () => {
@@ -46,13 +47,14 @@ const SignIn = () => {
             />
             <div>
               <input
-                className="w-full w-[16rem] h-12 px-2 text-grey-600 bg-white border-2 border-gray-300 rounded-md outline-blue-500 transition ease-in-out duration-500 focus:border-blue-500 focus:shadow-md"
+                className="w-full w-[16rem] h-12 px-2 text-grey-600 bg-white border-2 border-gray-300 rounded-md outline-blue-500 transition ease-in-out duration-500 focus:border-blue-500 focus:shadow-md my-6"
                 type={showPassword ? "text" : "password"}
                 placeholder="Password"
                 id="password"
                 value={password}
                 onChange={onChange}
-              />
+              />{" "}
+              <AiOutlineEye className="w-8 h-8"/> <AiOutlineEyeInvisible className="w-8 h-8"/>
             </div>
           </form>
         </div>
