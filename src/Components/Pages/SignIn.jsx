@@ -1,5 +1,5 @@
 import { useState } from "react";
-import handWithKey from "../../../public/assets/hand-key.avif";
+import handWithKey from "../../../src/assets/hand-key.avif";
 
 const SignIn = () => {
     // Created the form data hook
@@ -35,7 +35,7 @@ const SignIn = () => {
         {/* For the image */}
         <div className="w-full md:w-[67%] lg:w-[40%] lg:ml-20 ">
           <form>
-            <input className="w-full" type="email" placeholder="Email address" id="email" value={email} onChange={onChange}/>
+            <input className="w-full w-[16rem] h-12 px-2 text-grey-600 bg-white border-2 border-gray-300 rounded-md outline-blue-500" type="email" placeholder="Email address" id="email" value={email} onChange={onChange}/>
           </form>
         </div>
       </div>
