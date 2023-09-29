@@ -1,6 +1,24 @@
+import { useState } from "react";
 import handWithKey from "../../../public/assets/hand-key.avif";
 
 const SignIn = () => {
+    // Created the form data hook
+  const [formData, setFromData] = useState({
+      email: "",
+      password: "",
+  })
+    
+    // Created a function to update the form data
+    const { email, password } = formData;
+    
+    const onChange = (e) => {
+        setFromData((prevState) => ({
+            ...prevState,
+            // updated the form data so that whatever is typed into the input field is stored in the form data object.
+            [e.target.id]: e.target.value
+        }))
+    }
+    
   return (
     <section>
       <h1 className="text-4xl font-bold text-center mt-4">Sign In</h1>
@@ -17,7 +35,7 @@ const SignIn = () => {
         {/* For the image */}
         <div className="w-full md:w-[67%] lg:w-[40%] lg:ml-20 ">
           <form>
-            <input className="w-full" type="email" placeholder="Email address" id="email" value={email} />
+            <input className="w-full" type="email" placeholder="Email address" id="email" value={email} onChange={onChange}/>
           </form>
         </div>
       </div>
