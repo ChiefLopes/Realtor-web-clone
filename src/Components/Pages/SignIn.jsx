@@ -75,13 +75,15 @@ const SignIn = () => {
                   </Link>
                 </p>
                 <p className="text-blue-500">
-                  <Link to="/ForgotPassword.jsx" className="text-blue-500 hover:text-blue-700 transition ease-in-out duration-500">
+                  <Link to="/ForgotPassword.jsx" className="text-blue-500 hover:text-blue-800 transition ease-in-out duration-500">
                     Forgot Password?
                   </Link>
                 </p>
               </div>
             </div>
-          </form>
+                  </form>
+                  
+                  <button type="submit" className="bg-blue-500 hover:bg-blue-700 text-white text-sm font-medium shadow-md uppercase font-bold py-2 px-4 rounded w-full transition ease-in-out duration-150 hover:shadow-lg active">Sign In</button>
         </div>
       </div>
     </section>
