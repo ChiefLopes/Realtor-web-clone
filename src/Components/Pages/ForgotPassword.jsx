@@ -55,7 +55,7 @@ const ForgotPassword = () => {
             <button
               type="submit"
               className="bg-blue-500 hover:bg-blue-700 text-white text-sm font-medium shadow-md uppercase font-bold py-2 px-4 rounded w-full transition ease-in-out duration-150 hover:shadow-lg active:bg-blue-800">
-              Sign In
+              Send Reset Password
             </button>
             <div className="my-3 flex before:border-t before:flex-1 items-center before:border-gray-300 after:border-t after:flex-1 items-center after:border-gray-300">
               <p className="text-center mx-4">OR</p>
