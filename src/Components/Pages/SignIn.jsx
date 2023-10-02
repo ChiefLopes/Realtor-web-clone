@@ -1,9 +1,9 @@
 import { useState } from "react";
-import { AiFillEye, AiFillEyeInvisible } from "react-icons/ai";
+import { BsEyeSlashFill, BsEyeFill } from "react-icons/ai";
 import handWithKey from "../../../src/assets/hand-key.avif";
 
 const SignIn = () => {
-  const [showPassword, setshowPassword] = useState(false);
+  const [showPassword, setshowPassword] = useState(true);
   // Created the form data hook
   const [formData, setFromData] = useState({
     email: "",
@@ -45,7 +45,7 @@ const SignIn = () => {
               value={email}
               onChange={onChange}
             />
-            <div>
+            <div className="relative ">
               <input
                 className="w-full w-[16rem] h-12 px-2 text-grey-600 bg-white border-2 border-gray-300 rounded-md outline-blue-500 transition ease-in-out duration-500 focus:border-blue-500 focus:shadow-md my-6"
                 type={showPassword ? "text" : "password"}
@@ -54,9 +54,12 @@ const SignIn = () => {
                 value={password}
                 onChange={onChange}
               />
-                          {/* The eye icon to show and hide the password */}
-                        {showPassword ? <AiFillEye /> : <AiFillEyeInvisible />}
-            
+              {/* The eye icon to show and hide the password */}
+              {showPassword ? (
+                <BsEyeFill className="absolute bottom-10 right-2 w-6 h-6" />
+              ) : (
+                <BsEyeSlashFill className="absolute bottom-10 right-2 w-6 h-6" />
+              )}
             </div>
           </form>
         </div>
