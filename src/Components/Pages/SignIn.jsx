@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 import { BsEyeFill, BsEyeSlashFill } from "react-icons/bs";
 import handWithKey from "../../../src/assets/hand-key.avif";
 
@@ -45,7 +46,7 @@ const SignIn = () => {
               value={email}
               onChange={onChange}
             />
-            <div className="relative ">
+            <div className="relative mb-6">
               <input
                 className="w-full w-[16rem] h-12 px-2 text-grey-600 bg-white border-2 border-gray-300 rounded-md outline-blue-500 transition ease-in-out duration-500 focus:border-blue-500 focus:shadow-md my-6"
                 type={showPassword ? "text" : "password"}
@@ -56,10 +57,29 @@ const SignIn = () => {
               />
               {/* The eye icon to show and hide the password */}
               {showPassword ? (
-                <BsEyeSlashFill className="absolute bottom-[35px] right-4 text-zinc-900 text-2xl cursor-pointer" onClick={() => setshowPassword((prevState) => !prevState)}/>
+                <BsEyeSlashFill
+                  className="absolute bottom-[35px] right-4 text-zinc-900 text-2xl cursor-pointer"
+                  onClick={() => setshowPassword((prevState) => !prevState)}
+                />
               ) : (
-                <BsEyeFill className="absolute bottom-[35px] right-4 text-zinc-900 text-2xl cursor-pointer" onClick={() => setshowPassword((prevState) => !prevState)}/>
+                <BsEyeFill
+                  className="absolute bottom-[35px] right-4 text-zinc-900 text-2xl cursor-pointer"
+                  onClick={() => setshowPassword((prevState) => !prevState)}
+                />
               )}
+              <div>
+                <p>
+                  Don&apos;t have an account?{" "}
+                  <Link to="/sign-up" className="text-red-500">
+                    Register
+                  </Link>
+                </p>
+                <p className="text-blue-500">
+                  <Link to="./ForgotPassword.jsx" className="text-blue-500">
+                    Forgot Password?
+                  </Link>
+                </p>
+              </div>
             </div>
           </form>
         </div>
