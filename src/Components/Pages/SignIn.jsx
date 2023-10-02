@@ -56,9 +56,15 @@ const SignIn = () => {
               />
               {/* The eye icon to show and hide the password */}
               {showPassword ? (
-                <BsEyeSlashFill className="absolute bottom-[35px] right-4 text-zinc-900 text-2xl cursor-pointer" />
+                <BsEyeSlashFill
+                  className="absolute bottom-[35px] right-4 text-zinc-900 text-2xl cursor-pointer"
+                  onClick={() => setshowPassword((prevState) => !prevState)}
+                />
               ) : (
-                <BsEyeFill className="absolute bottom-[35px] right-4 text-zinc-900 text-2xl cursor-pointer" />
+                <BsEyeFill
+                  className="absolute bottom-[35px] right-4 text-zinc-900 text-2xl cursor-pointer"
+                  onClick={() => setshowPassword((prevState) => !prevState)}
+                />
               )}
             </div>
           </form>
