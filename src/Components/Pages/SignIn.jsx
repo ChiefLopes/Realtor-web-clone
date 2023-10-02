@@ -1,26 +1,26 @@
 import { useState } from "react";
-import { AiOutlineEye, AiOutlineEyeInvisible } from "react-icons/ai"; 
+import { AiFillEye, AiFillEyeInvisible } from "react-icons/ai";
 import handWithKey from "../../../src/assets/hand-key.avif";
 
 const SignIn = () => {
-    const [showPassword, setshowPassword] = useState(false);
-    // Created the form data hook
+  const [showPassword, setshowPassword] = useState(false);
+  // Created the form data hook
   const [formData, setFromData] = useState({
-      email: "",
-      password: "",
-  })
-    
-    // Created a function to update the form data
-    const { email, password } = formData;
-    
-    const onChange = (e) => {
-        setFromData((prevState) => ({
-            ...prevState,
-            // updated the form data so that whatever is typed into the input field is stored in the form data object.
-            [e.target.id]: e.target.value
-        }))
-    }
-    
+    email: "",
+    password: "",
+  });
+
+  // Created a function to update the form data
+  const { email, password } = formData;
+
+  const onChange = (e) => {
+    setFromData((prevState) => ({
+      ...prevState,
+      // updated the form data so that whatever is typed into the input field is stored in the form data object.
+      [e.target.id]: e.target.value,
+    }));
+  };
+
   return (
     <section>
       <h1 className="text-4xl font-bold text-center mt-4">Sign In</h1>
@@ -53,8 +53,10 @@ const SignIn = () => {
                 id="password"
                 value={password}
                 onChange={onChange}
-              />{" "}
-              <AiOutlineEye className="w-8 h-8"/> <AiOutlineEyeInvisible className="w-8 h-8"/>
+              />
+                          {/* The eye icon to show and hide the password */}
+                        {showPassword ? <AiFillEye /> : <AiFillEyeInvisible />}
+            
             </div>
           </form>
         </div>
