@@ -34,7 +34,7 @@ const SignUp = () => {
           <img
             src={handWithKey}
             alt="handwithkey"
-            className="w-full rounded-2xl h-[22rem] object-cover w-full"
+            className="w-full rounded-2xl h-[23rem] object-cover w-full"
           />
         </div>
         {/* For the image */}
@@ -88,7 +88,7 @@ const SignUp = () => {
                 </p>
                 <p className="text-blue-500">
                   <Link
-                    to="/ForgotPassword.jsx"
+                    to="/forgot-password"
                     className="text-blue-500 hover:text-blue-800 transition ease-in-out duration-500">
                     Forgot Password?
                   </Link>
