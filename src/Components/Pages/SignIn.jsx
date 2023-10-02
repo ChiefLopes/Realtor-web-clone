@@ -94,9 +94,8 @@ const SignIn = () => {
             <div className="my-3 flex before:border-t before:flex-1 items-center before:border-gray-300 after:border-t after:flex-1 items-center after:border-gray-300">
               <p className="text-center mx-4">OR</p>
             </div>
+            <OAuth />
           </form>
-
-          <OAuth />
         </div>
       </div>
     </section>
