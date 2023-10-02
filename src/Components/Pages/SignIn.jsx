@@ -70,12 +70,12 @@ const SignIn = () => {
               <div className="flex justify-between whitespace-nowrap md:text-sm sm:text-lg">
                 <p>
                   Don&apos;t have an account?{" "}
-                  <Link to="/sign-up" className="text-red-500 hover:text-red-600">
+                  <Link to="/sign-up" className="text-red-500 hover:text-red-700 transition ease-in-out duration-500">
                     Register
                   </Link>
                 </p>
                 <p className="text-blue-500">
-                  <Link to="/ForgotPassword.jsx" className="text-blue-500">
+                  <Link to="/ForgotPassword.jsx" className="text-blue-500 hover:text-blue-700 transition ease-in-out duration-500">
                     Forgot Password?
                   </Link>
                 </p>
