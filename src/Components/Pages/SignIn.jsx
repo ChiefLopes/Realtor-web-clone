@@ -58,16 +58,16 @@ const SignIn = () => {
               {/* The eye icon to show and hide the password */}
               {showPassword ? (
                 <BsEyeSlashFill
-                  className="absolute bottom-[35px] right-4 text-zinc-900 text-2xl cursor-pointer"
+                  className="absolute top-[35px] right-4 text-zinc-900 text-2xl cursor-pointer"
                   onClick={() => setshowPassword((prevState) => !prevState)}
                 />
               ) : (
                 <BsEyeFill
-                  className="absolute bottom-[35px] right-4 text-zinc-900 text-2xl cursor-pointer"
+                  className="absolute top-[35px] right-4 text-zinc-900 text-2xl cursor-pointer"
                   onClick={() => setshowPassword((prevState) => !prevState)}
                 />
               )}
-              <div>
+              <div className="flex justify-between">
                 <p>
                   Don&apos;t have an account?{" "}
                   <Link to="/sign-up" className="text-red-500">
@@ -75,7 +75,7 @@ const SignIn = () => {
                   </Link>
                 </p>
                 <p className="text-blue-500">
-                  <Link to="./ForgotPassword.jsx" className="text-blue-500">
+                  <Link to="/ForgotPassword.jsx" className="text-blue-500">
                     Forgot Password?
                   </Link>
                 </p>
