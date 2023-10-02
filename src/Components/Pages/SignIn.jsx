@@ -33,7 +33,7 @@ const SignIn = () => {
           <img
             src={handWithKey}
             alt="handwithkey"
-            className="w-full rounded-2xl"
+            className="w-full rounded-2xl h-[22rem] object-cover w-[50rem]"
           />
         </div>
         {/* For the image */}
