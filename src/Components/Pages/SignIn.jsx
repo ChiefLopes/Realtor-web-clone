@@ -67,10 +67,10 @@ const SignIn = () => {
                   onClick={() => setshowPassword((prevState) => !prevState)}
                 />
               )}
-              <div className="flex justify-between">
+              <div className="flex justify-between whitespace-nowrap md:text-sm sm:text-lg">
                 <p>
                   Don&apos;t have an account?{" "}
-                  <Link to="/sign-up" className="text-red-500">
+                  <Link to="/sign-up" className="text-red-500 hover:text-red-600">
                     Register
                   </Link>
                 </p>
