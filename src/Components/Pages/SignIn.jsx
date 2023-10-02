@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 import { BsEyeFill, BsEyeSlashFill } from "react-icons/bs";
 import handWithKey from "../../../src/assets/hand-key.avif";
+import OAuth from "../Sections/OAuth";
 
 const SignIn = () => {
   const [showPassword, setshowPassword] = useState(false);
@@ -94,7 +95,8 @@ const SignIn = () => {
           </button>
           <div className="my-3 flex before:border-t before:flex-1 items-center before:border-gray-300 after:border-t after:flex-1 items-center after:border-gray-300">
             <p className="text-center mx-4">OR</p>
-          </div>
+                  </div>
+                  <OAuth />
         </div>
       </div>
     </section>
