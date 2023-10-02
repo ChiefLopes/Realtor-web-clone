@@ -79,7 +79,7 @@ const SignIn = () => {
                 </p>
                 <p className="text-blue-500">
                   <Link
-                    to="/ForgotPassword.jsx"
+                    to="/forgot-password"
                     className="text-blue-500 hover:text-blue-800 transition ease-in-out duration-500">
                     Forgot Password?
                   </Link>
