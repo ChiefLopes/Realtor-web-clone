@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { BsEyeFill, BsEyeSlashFill } from "react-icons/bs";
 import handWithKey from "../../../src/assets/hand-key.avif";
 import OAuth from "../Sections/OAuth";
@@ -7,9 +7,10 @@ import {
   getAuth,
   createUserWithEmailAndPassword,
   updateProfile,
-  updateCurrentUser,
+  //   updateCurrentUser,
 } from "firebase/auth";
 import { db } from "../utils/Firebase";
+import { doc, serverTimestamp, setDoc } from "firebase/firestore";
 
 const SignUp = () => {
   const [showPassword, setshowPassword] = useState(false);
@@ -22,7 +23,7 @@ const SignUp = () => {
 
   // Created a function to update the form data
   const { name, email, password } = formData;
-
+  const navigate = useNavigate();
   const onChange = (e) => {
     setFromData((prevState) => ({
       ...prevState,
@@ -45,7 +46,12 @@ const SignUp = () => {
         displayName: name,
       });
       const user = userCredentials.user;
-      console.log(user);
+      const formDataCopy = { ...formData };
+      delete formDataCopy.password;
+      formDataCopy.timestamp = serverTimestamp();
+
+      await setDoc(doc(db, "users", user.uid), formDataCopy);
+      navigate("/");
     } catch (error) {
       console.log(error);
     }
