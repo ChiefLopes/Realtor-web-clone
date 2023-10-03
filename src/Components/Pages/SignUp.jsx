@@ -11,6 +11,7 @@ import {
 } from "firebase/auth";
 import { db } from "../utils/Firebase";
 import { doc, serverTimestamp, setDoc } from "firebase/firestore";
+import { toast } from "react-toastify";
 
 const SignUp = () => {
   const [showPassword, setshowPassword] = useState(false);
@@ -53,7 +54,7 @@ const SignUp = () => {
       await setDoc(doc(db, "users", user.uid), formDataCopy);
       navigate("/");
     } catch (error) {
-      console.log(error);
+     toast.error("Something went wrong!")
     }
   }
 
