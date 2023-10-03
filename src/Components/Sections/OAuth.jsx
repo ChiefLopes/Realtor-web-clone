@@ -1,6 +1,8 @@
 import { GoogleAuthProvider, getAuth, signInWithPopup } from "firebase/auth";
+import { doc, getDoc, serverTimestamp, setDoc } from "firebase/firestore";
 import { FcGoogle } from "react-icons/fc";
 import { toast } from "react-toastify";
+import { db } from "../utils/Firebase";
 
 const OAuth = () => {
   const onGoogleClick = async (e) => {
@@ -10,11 +12,21 @@ const OAuth = () => {
       const auth = getAuth();
       const provider = new GoogleAuthProvider();
       const result = await signInWithPopup(auth, provider);
-        const user = result.user;
-        console.log(user);
-        
+      const user = result.user;
+
+      const docRef = doc(db, "users", user.uid);
+
+      if (!docSnap.exists) {
+        await setDoc(docRef, {
+          name: user.displayName,
+            email: user.email,
+          timestamp: serverTimestamp()
+        });
+      }
+
+      const docSnap = await getDoc(docRef);
     } catch (error) {
-      console.log(error);
+      toast.error("could not sign in with google");
     }
   };
   return (
