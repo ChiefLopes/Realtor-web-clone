@@ -3,6 +3,13 @@ import { Link } from "react-router-dom";
 import { BsEyeFill, BsEyeSlashFill } from "react-icons/bs";
 import handWithKey from "../../../src/assets/hand-key.avif";
 import OAuth from "../Sections/OAuth";
+import {
+  getAuth,
+  createUserWithEmailAndPassword,
+  updateProfile,
+  updateCurrentUser,
+} from "firebase/auth";
+import { db } from "../utils/Firebase";
 
 const SignUp = () => {
   const [showPassword, setshowPassword] = useState(false);
@@ -24,6 +31,26 @@ const SignUp = () => {
     }));
   };
 
+  async function onSubmit(e) {
+    e.preventDefault();
+
+    try {
+      const auth = getAuth();
+      const userCredentials = await createUserWithEmailAndPassword(
+        auth,
+        email,
+        password
+      );
+      updateProfile(auth.currentUser, {
+        displayName: name,
+      });
+      const user = userCredentials.user;
+      console.log(user);
+    } catch (error) {
+      console.log(error);
+    }
+  }
+
   return (
     <section>
       <h1 className="text-4xl font-bold text-center mt-4">Sign Up</h1>
@@ -39,7 +66,7 @@ const SignUp = () => {
         </div>
         {/* For the image */}
         <div className="w-full md:w-[67%] lg:w-[40%] lg:ml-20 ">
-          <form>
+          <form onSubmit={onSubmit}>
             <input
               className="w-full w-[16rem] h-12 px-2 mb-3 text-grey-600 bg-white border-2 border-gray-300 rounded-md outline-blue-500 transition ease-in-out duration-500 focus:border-blue-500 focus:shadow-md"
               type="text"
@@ -79,7 +106,7 @@ const SignUp = () => {
               )}
               <div className="flex justify-between whitespace-nowrap md:text-sm sm:text-lg sm:flex-wrap">
                 <p>
-               Have an account?
+                  Have an account?
                   <Link
                     to="/sign-in"
                     className="text-red-500 ml-1  hover:text-red-700 transition ease-in-out duration-500">
