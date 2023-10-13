@@ -3,7 +3,8 @@ import { Link } from "react-router-dom";
 import { BsEyeFill, BsEyeSlashFill } from "react-icons/bs";
 import handWithKey from "../../../src/assets/hand-key.avif";
 import OAuth from "../Sections/OAuth";
-import { signInWithEmailAndPassword } from "firebase/auth";
+import { signInWithEmailAndPassword, auth } from "firebase/auth";
+import { toast } from "react-toastify";
 const SignIn = () => {
   const [showPassword, setshowPassword] = useState(false);
   // Created the form data hook
@@ -22,6 +23,15 @@ const SignIn = () => {
       [e.target.id]: e.target.value,
     }));
   };
+    
+    async function onSubmit(e) {
+        e.preventDefault();
+        
+        try {
+            
+        } catch (error) {
+            toast.error("Invalid user credentials")
+        }
 
   return (
     <section>
@@ -38,7 +48,7 @@ const SignIn = () => {
         </div>
         {/* For the image */}
         <div className="w-full md:w-[67%] lg:w-[40%] lg:ml-20 ">
-          <form>
+          <form onSubmit={onSubmit}>
             <input
               className="w-full w-[16rem] h-12 px-2 text-grey-600 bg-white border-2 border-gray-300 rounded-md outline-blue-500 transition ease-in-out duration-500 focus:border-blue-500 focus:shadow-md"
               type="email"
