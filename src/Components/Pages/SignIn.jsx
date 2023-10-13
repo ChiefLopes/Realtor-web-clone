@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { BsEyeFill, BsEyeSlashFill } from "react-icons/bs";
 import handWithKey from "../../../src/assets/hand-key.avif";
 import OAuth from "../Sections/OAuth";
-
+import { signInWithEmailAndPassword } from "firebase/auth";
 const SignIn = () => {
   const [showPassword, setshowPassword] = useState(false);
   // Created the form data hook
