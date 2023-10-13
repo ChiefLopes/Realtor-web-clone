@@ -14,7 +14,7 @@ import { doc, serverTimestamp, setDoc } from "firebase/firestore";
 import { toast } from "react-toastify";
 
 const SignUp = () => {
-  const [showPassword, setshowPassword] = useState(false);
+  const [showPassword, setShowPassword] = useState(false);
   // Created the form data hook
   const [formData, setFromData] = useState({
     name: "",
@@ -104,12 +104,12 @@ const SignUp = () => {
               {showPassword ? (
                 <BsEyeSlashFill
                   className="absolute top-[25px] right-4 text-zinc-900 text-2xl cursor-pointer"
-                  onClick={() => setshowPassword((prevState) => !prevState)}
+                  onClick={() => setShowPassword((prevState) => !prevState)}
                 />
               ) : (
                 <BsEyeFill
                   className="absolute top-[25px] right-4 text-zinc-900 text-2xl cursor-pointer"
-                  onClick={() => setshowPassword((prevState) => !prevState)}
+                  onClick={() => setShowPassword((prevState) => !prevState)}
                 />
               )}
               <div className="flex justify-between whitespace-nowrap md:text-sm sm:text-lg sm:flex-wrap">
