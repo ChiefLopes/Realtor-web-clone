@@ -55,7 +55,7 @@ const ForgotPassword = () => {
                   Don&apos;t have an account?
                   <Link
                     to="/sign-up"
-                    className="text-red-500 hover:text-red-700 transition ease-in-out duration-500">
+                    className="text-red-500 hover:text-red-700 transition ease-in-out duration-500 ml-1">
                     Register
                   </Link>
                 </p>
