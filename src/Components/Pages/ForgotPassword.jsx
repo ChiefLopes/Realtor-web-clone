@@ -9,18 +9,22 @@ const ForgotPassword = () => {
   const [email, setEmail] = useState("");
 
   const onChange = (e) => {
-      setEmail(e.target.value)
-  }
-    
-    const onSubmit = (e) => {
-        e.preventDefault();
-        
-        const auth = getAuth();
-        sendPasswordResetEmail(auth, email)
-        .then(() => {
-            toast.success("Email sent");
-        })
+    setEmail(e.target.value);
+  };
+
+  async function onSubmit(e) {
+    e.preventDefault();
+
+    try {
+      const auth = getAuth();
+     await sendPasswordResetEmail(auth, email);
+      if (auth) {
+        toast.success("Email sent");
+      }
+    } catch (error) {
+      toast.error("Wrong email!");
     }
+  }
   return (
     <section>
       <h1 className="text-4xl font-bold text-center mt-4">Forgot Password</h1>
@@ -55,7 +59,7 @@ const ForgotPassword = () => {
                     Register
                   </Link>
                 </p>
-                              <p className="text-blue-500">
+                <p className="text-blue-500">
                   <Link
                     to="/sign-in"
                     className="text-blue-500 hover:text-blue-800 transition ease-in-out duration-500">
