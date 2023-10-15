@@ -14,8 +14,6 @@ const OAuth = () => {
       const result = await signInWithPopup(auth, provider);
       const user = result.user;
 
-      // Moved console.log(user) here
-      console.log(user);
 
       const docRef = doc(db, "users", user.uid);
 
