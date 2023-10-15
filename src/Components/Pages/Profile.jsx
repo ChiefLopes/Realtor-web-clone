@@ -19,7 +19,7 @@ const Profile = () => {
               id="name"
               value={name}
               disabled
-              className="w-full px-4 py-2 text-xl text-grey-700 bg-white border-2 border-grey-300 rounded transition ease-in-out"
+              className="w-full mb-6 px-4 py-2 text-xl text-grey-700 bg-white border-2 border-grey-300 rounded transition ease-in-out"
             />
 
             {/* email input */}
@@ -28,8 +28,13 @@ const Profile = () => {
               id="email"
               value={email}
               disabled
-              className="w-full px-4 py-2 text-xl text-grey-700 bg-white border-2 border-grey-300 rounded transition ease-in-out"
-            />
+              className="w-full mb-6 px-4 py-2 text-xl text-grey-700 bg-white border-2 border-grey-300 rounded transition ease-in-out"
+                      />
+                      
+                      <div className="flex justify-between">
+                          <p>Do you want to change your name? <span>Edit</span></p>
+                          <p>sign out</p>
+                      </div>
           </form>
         </div>
       </section>
