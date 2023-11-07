@@ -29,7 +29,7 @@ const Profile = () => {
               type="text"
               id="name"
               value={name}
-              disabled
+              disabled={!changeDetail}
               className="w-full mb-6 px-4 py-2 text-xl  text-zinc-700 bg-white border-2 border-grey-300 rounded transition ease-in-out"
             />
 
