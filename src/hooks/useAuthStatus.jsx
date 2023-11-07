@@ -14,11 +14,9 @@ const useAuthStatus = () => {
             
             setCheckingStatus(false);
         })
-    })
+    }, [])
     
-  return (
-    <div>useAuthStatus</div>
-  )
+  return {loggedIn, checkingStatus}
 }
 
 export default useAuthStatus
