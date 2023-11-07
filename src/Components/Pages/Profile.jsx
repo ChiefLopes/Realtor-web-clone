@@ -1,6 +1,10 @@
-import { getAuth } from "firebase/auth";
+import { getAuth, updateProfile } from "firebase/auth";
+import { doc, updateDoc } from "firebase/firestore";
 import { useState } from "react";
 import { useNavigate } from "react-router";
+import { toast } from "react-toastify";
+import { db } from "../utils/Firebase";
+
 
 const Profile = () => {
   const auth = getAuth();
@@ -24,8 +28,25 @@ const Profile = () => {
     }));
   }
     
-    function onsubmit() {
-    
+    async function onSubmit() {
+         try {
+             if (auth.currentUser.displayName !== name) {
+                 //   Update the  display name in firebase authentication
+                 await updateProfile(auth.currentUser, {
+                     displayName: name,
+                 });
+                 
+                 //   update name in firestore
+                 const docRef = doc(db, "users", auth.currentUser.uid)
+                 await updateDoc(docRef, {
+                     name
+                 });
+                
+             }
+              toast.success("Profile details successfully updated");
+         } catch (error) {
+            toast.error("Could not appply changes to profile")
+         }
     }
 
   return (
@@ -41,8 +62,8 @@ const Profile = () => {
               value={name}
               disabled={!changeDetail}
               onChange={onChange}
-              className={`w-full mb-6 px-4 py-2 text-xl  text-zinc-700 bg-white border-2 border-grey-300 rounded transition ease-in-out ${
-                changeDetail && "bg-red-200 focus:bg-red-200"
+              className={`w-full mb-6 px-4 py-2 text-xl  text-zinc-700 bg-white border-2 border-blue-300 rounded transition ease-in-out ${
+                changeDetail && "bg-red-200 focus:bg-red-200 border-blue-300"
               }`}
             />
             {/* email input */}
@@ -52,8 +73,8 @@ const Profile = () => {
               value={email}
               disabled={!changeDetail}
               onChange={onChange}
-              className={`w-full mb-6 px-4 py-2 text-xl  text-zinc-700 bg-white border-2 border-grey-300 rounded transition ease-in-out ${
-                changeDetail && "bg-red-200 focus:bg-red-200"
+              className={`w-full mb-6 px-4 py-2 text-xl  text-zinc-700 bg-white border-2 border-blue-300 rounded transition ease-in-out ${
+                changeDetail && "bg-red-200 focus:bg-red-200 border-blue-300"
               }`}
             />
             <div className="flex justify-between whitespace-nowrap text-sm sm:text-lg mb-6">
