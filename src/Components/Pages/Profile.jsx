@@ -5,7 +5,7 @@ import { useNavigate } from "react-router";
 const Profile = () => {
   const auth = getAuth();
   const navigate = useNavigate();
-    const [changeDetail, setChangeDetail] = useState(false);
+  const [changeDetail, setChangeDetail] = useState(false);
   const [formData, setFormData] = useState({
     name: auth.currentUser.displayName,
     email: auth.currentUser.email,
@@ -17,11 +17,15 @@ const Profile = () => {
     auth.signOut();
     navigate("/");
   }
-    function onChange(e) {
-        setFormData((prevState) => ({
-            ...prevState,
-            [e.target.id]:e.target.value,
-        }))
+  function onChange(e) {
+    setFormData((prevState) => ({
+      ...prevState,
+      [e.target.id]: e.target.value,
+    }));
+  }
+    
+    function onsubmit() {
+    
     }
 
   return (
@@ -37,9 +41,10 @@ const Profile = () => {
               value={name}
               disabled={!changeDetail}
               onChange={onChange}
-              className="w-full mb-6 px-4 py-2 text-xl  text-zinc-700 bg-white border-2 border-grey-300 rounded transition ease-in-out"
+              className={`w-full mb-6 px-4 py-2 text-xl  text-zinc-700 bg-white border-2 border-grey-300 rounded transition ease-in-out ${
+                changeDetail && "bg-red-200 focus:bg-red-200"
+              }`}
             />
-
             {/* email input */}
             <input
               type="email"
@@ -47,14 +52,18 @@ const Profile = () => {
               value={email}
               disabled={!changeDetail}
               onChange={onChange}
-              className="w-full mb-6 px-4 py-2 text-xl text-zinc-700 bg-white border-2 border-grey-300 rounded transition ease-in-out"
+              className={`w-full mb-6 px-4 py-2 text-xl  text-zinc-700 bg-white border-2 border-grey-300 rounded transition ease-in-out ${
+                changeDetail && "bg-red-200 focus:bg-red-200"
+              }`}
             />
-
             <div className="flex justify-between whitespace-nowrap text-sm sm:text-lg mb-6">
               <p className="flex items-center">
                 Do you want to change your name?
                 <span
-                  onClick={() => setChangeDetail((prevState) => !prevState)}
+                  onClick={() => {
+                    changeDetail && onSubmit();
+                    setChangeDetail((prevState) => !prevState);
+                  }}
                   className="text-red-500 ml-2  hover:text-red-700 cursor-pointer transition ease-in-out duration-600">
                   {changeDetail ? "Apply Change" : "Edit"}
                 </span>
