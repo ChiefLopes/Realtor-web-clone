@@ -1,5 +1,7 @@
 import { useLocation, useNavigate } from "react-router";
 const Header = () => {
+    // Cretaed a hook for the page state
+    const [pageState, setPageState] = useState("Sign in")
   const location = useLocation();
   const navigate = useNavigate();
   function pathMatchRoute(route) {
