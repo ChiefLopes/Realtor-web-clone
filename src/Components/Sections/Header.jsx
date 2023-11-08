@@ -1,9 +1,21 @@
+import { getAuth, onAuthStateChanged } from "firebase/auth";
+import { useEffect, useState } from "react";
 import { useLocation, useNavigate } from "react-router";
 const Header = () => {
-    // Cretaed a hook for the page state
-    const [pageState, setPageState] = useState("Sign in")
+  // Cretaed a hook for the page state
+  const [pageState, setPageState] = useState("Sign in");
   const location = useLocation();
-  const navigate = useNavigate();
+    const navigate = useNavigate();
+    const auth = getAuth()
+    useEffect(() => {
+        onAuthStateChanged(auth, (user) => {
+            if (user) {
+            setPageState("Profile")
+            } else {
+            setPageState("Sign in")
+            }
+        })
+    }, [auth])
   function pathMatchRoute(route) {
     if (route === location.pathname) {
       return true;
@@ -15,7 +27,7 @@ const Header = () => {
       <header className="flex justify-between items-center px-3 max-w-7xl mx-auto my-2">
         <div>
           <img
-            src="https://static.rdc.moveaws.com/images/logos/rdc-logo-default.svg"
+            src="https://static.rdc.moveaws.com/images/logos/  rdc-logo-default.svg"
             alt=""
             className=" h-5 cursor-pointer"
             onClick={() => navigate("/")}
@@ -40,12 +52,12 @@ const Header = () => {
               Offers
             </li>
             <li
-              onClick={() => navigate("/sign-in")}
               className={`cursor-pointer py-3 text-sm font-semibold text-gray-400  ${
-               ( pathMatchRoute("/profile") || pathMatchRoute("/profile")) &&
+                (pathMatchRoute("/sign-in") || pathMatchRoute("/profile")) &&
                 "text-zinc-900 border-b-4 border-red-500"
-              }`}>
-              Sign In
+              }`}
+              onClick={() => navigate("/profile")}>
+              {pageState}
             </li>
           </ul>
         </div>
