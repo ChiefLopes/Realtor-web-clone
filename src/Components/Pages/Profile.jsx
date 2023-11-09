@@ -47,6 +47,7 @@ const Profile = () => {
       toast.error("Could not appply changes to profile");
     }
   }
+    
 
   return (
     <>
