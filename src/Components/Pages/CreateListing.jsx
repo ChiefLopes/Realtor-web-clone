@@ -12,8 +12,8 @@ const CreateListing = () => {
               <p className="text-lg font-semibold mt-6">Sell / Rent</p>
           </form>
           <div>
-              <button type="button" id="type" value="sale" onClick={onchange} className={``}>Sell</button>
-              <button type="button" id="type" value="rent" onClick={onchange}>Rent</button>
+              <button type="button" id="type" value="sale" onClick={onchange} className={`px-7 py-3 font-medium text-sm uppercase shadow-md rounded hover:shadow-lg focus:shadow-lg  active:shadow-lg`}>Sell</button>
+               
           </div>
     </main>
   );
