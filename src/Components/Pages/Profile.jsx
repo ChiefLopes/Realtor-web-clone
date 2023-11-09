@@ -96,8 +96,8 @@ const Profile = () => {
             </div>
           </form>
 
-          <button type="submit">
-            <Link to="" >
+          <button type="submit" className="w-full bg-blue-600 rounded text-white uppercase px-7 py-2 text-sm font-medium">
+            <Link to="/create-listing" >
               <FcHome /> Sell Or Rent Your Home
             </Link>
           </button>
