@@ -4,8 +4,8 @@ import { useState } from "react";
 import { useNavigate } from "react-router";
 import { toast } from "react-toastify";
 import { db } from "../utils/Firebase";
-
-
+import { FcHome } from "react-icons/fc";
+import { Link } from "react-router-dom";
 const Profile = () => {
   const auth = getAuth();
   const navigate = useNavigate();
@@ -27,27 +27,26 @@ const Profile = () => {
       [e.target.id]: e.target.value,
     }));
   }
-    
-    async function onSubmit() {
-         try {
-             if (auth.currentUser.displayName !== name) {
-                 //   Update the  display name in firebase authentication
-                 await updateProfile(auth.currentUser, {
-                     displayName: name,
-                 });
-                 
-                 //   update name in firestore
-                 const docRef = doc(db, "users", auth.currentUser.uid)
-                 await updateDoc(docRef, {
-                     name
-                 });
-                
-             }
-              toast.success("Profile details successfully updated");
-         } catch (error) {
-            toast.error("Could not appply changes to profile")
-         }
+
+  async function onSubmit() {
+    try {
+      if (auth.currentUser.displayName !== name) {
+        //   Update the  display name in firebase authentication
+        await updateProfile(auth.currentUser, {
+          displayName: name,
+        });
+
+        //   update name in firestore
+        const docRef = doc(db, "users", auth.currentUser.uid);
+        await updateDoc(docRef, {
+          name,
+        });
+      }
+      toast.success("Profile details successfully updated");
+    } catch (error) {
+      toast.error("Could not appply changes to profile");
     }
+  }
 
   return (
     <>
@@ -96,6 +95,12 @@ const Profile = () => {
               </p>
             </div>
           </form>
+
+          <button type="submit">
+            <Link to="" >
+              <FcHome /> Sell Or Rent Your Home
+            </Link>
+          </button>
         </div>
       </section>
     </>
