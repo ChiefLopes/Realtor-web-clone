@@ -1,6 +1,12 @@
-
+import { useState } from "react";
 
 const CreateListing = () => {
+    const [formData, setFormData] = useState({
+        type: "rent",
+    })
+    
+    const { type } = formData;
+    
     function onChange(e) {
          
     }
@@ -11,8 +17,10 @@ const CreateListing = () => {
           <form>
               <p className="text-lg font-semibold mt-6">Sell / Rent</p>
           </form>
-          <div>
-              <button type="button" id="type" value="sale" onClick={onchange} className={`px-7 py-3 font-medium text-sm uppercase shadow-md rounded hover:shadow-lg focus:shadow-lg  active:shadow-lg`}>Sell</button>
+          <div className="flex py-4">
+              <button type="button" id="type" value="sale" onClick={onchange} className={`mr-3 px-7 py-3 font-medium text-sm uppercase shadow-md rounded hover:shadow-lg focus:shadow-lg  active:shadow-lg transition duration-150 ease-in-out w-full ${type === "rent" ? "bg-white text-black" : "bg-slate-600 text-white"}`}>Sell</button>
+              
+              <button type="button" id="type" value="sale" onClick={onchange} className={`ml-3 px-7 py-3 font-medium text-sm uppercase shadow-md rounded hover:shadow-lg focus:shadow-lg  active:shadow-lg transition duration-150 ease-in-out w-full ${type === "sale" ? "bg-white text-black" : "bg-slate-600 text-white" }`}>Rent</button>
                
           </div>
     </main>
