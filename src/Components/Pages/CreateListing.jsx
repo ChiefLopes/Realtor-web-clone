@@ -65,8 +65,11 @@ const CreateListing = () => {
               type="number"
               id="bedrooms"
               value={bedrooms}
-                          className="w-20 h-8 outline-none text-center"
-                          min="1" max="20"              onChange={onChange}
+              className="w-full h-9 outline-none text-center  px-4 py-2 text-xl text-grey-700 bg-white border-2 border-grey-700 rounded transition duration-150 ease-in-out focus:text-grey-700 focus:bg-white focus:outline-none focus:border-slate-600"
+              min="1"
+              max="50"
+              required
+              onChange={onChange}
             />
           </div>
           <div>
@@ -75,8 +78,11 @@ const CreateListing = () => {
               type="number"
               id="bathrooms"
               value={bathrooms}
-              className="w-20 h-8 outline-none text-center"
-              min="1" max="20"              onChange={onChange}
+              className="w-full h-9 outline-none text-center px-4 py-2 text-xl text-grey-700 bg-white border-2 border-grey-700 rounded transition duration-150 ease-in-out focus:text-grey-700 focus:bg-white focus:outline-none focus:border-slate-600"
+              min="1"
+              max="50"
+              required
+              onChange={onChange}
             />
           </div>
         </div>
