@@ -62,7 +62,7 @@ const Profile = () => {
               value={name}
               disabled={!changeDetail}
               onChange={onChange}
-              className={`w-full mb-6 px-4 py-2 text-xl  text-zinc-700 bg-white border-2 border-blue-300 rounded transition ease-in-out ${
+              className={`w-full mb-6 px-4 py-2 text-xl  text-zinc-700 bg-white border-2 border-blue-300 rounded transition ease-in-out outline-none ${
                 changeDetail && "bg-red-200 focus:bg-red-200 border-blue-300"
               }`}
             />
@@ -73,7 +73,7 @@ const Profile = () => {
               value={email}
               disabled={!changeDetail}
               onChange={onChange}
-              className={`w-full mb-6 px-4 py-2 text-xl  text-zinc-700 bg-white border-2 border-blue-300 rounded transition ease-in-out ${
+              className={`w-full mb-6 px-4 py-2 text-xl  text-zinc-700 bg-white border-2 border-blue-300 rounded transition ease-in-out outline-none ${
                 changeDetail && "bg-red-200 focus:bg-red-200 border-blue-300"
               }`}
             />
@@ -97,9 +97,14 @@ const Profile = () => {
             </div>
           </form>
 
-          <button type="submit" className="w-full bg-blue-600 rounded text-white uppercase px-7 py-2 text-sm font-medium shadow-md hover:bg-blue-700 transition duration-150 ease-in-out hover:shadow-lg active:bg-blue-800 ">
-            <Link to="/create-listing"className="flex justify-center items-center" >
-              <FcHome className="mr-2 text-3xl bg-red-300 rounded-full p-1 border-2"/> Sell Or Rent Your Home
+          <button
+            type="submit"
+            className="w-full bg-blue-600 rounded text-white uppercase px-7 py-2 text-sm font-medium shadow-md hover:bg-blue-700 transition duration-150 ease-in-out hover:shadow-lg active:bg-blue-800 ">
+            <Link
+              to="/create-listing"
+              className="flex justify-center items-center">
+              <FcHome className="mr-2 text-3xl bg-red-300 rounded-full p-1 border-2" />{" "}
+              Sell Or Rent Your Home
             </Link>
           </button>
         </div>
