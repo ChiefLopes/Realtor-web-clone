@@ -6,9 +6,11 @@ const CreateListing = () => {
     name: "",
     bedrooms: 1,
     bathrooms: 1,
+    parking: false,
+    furnished: true,
   });
 
-  const { type, name, bedrooms, bathrooms } = formData;
+  const { type, name, bedrooms, bathrooms, parking, furnished } = formData;
 
   function onChange(e) {}
 
@@ -58,7 +60,7 @@ const CreateListing = () => {
           className="w-full mb-6 px-4 py-2 mt-2 text-md  text-grey-700 bg-white border-2 border-grey-300 rounded transition ease-in-out outline-none focus:text-grey-700 focus:bg-white focus:border-slate-600 mb-6"
         />
 
-        <div className="flex space-x-7">
+        <div className="flex space-x-6">
           <div>
             <p className="text-lg font-semibold">Bedrooms</p>
             <input
@@ -85,6 +87,56 @@ const CreateListing = () => {
               onChange={onChange}
             />
           </div>
+        </div>
+        <p className="text-lg font-semibold mt-6">Parking Spot</p>
+
+        <div className="flex py-4">
+          <button
+            type="button"
+            id="parking"
+            value={true}
+            onClick={onchange}
+            className={`mr-3 px-7 py-3 font-medium text-sm uppercase shadow-md rounded hover:shadow-lg focus:shadow-lg  active:shadow-lg transition duration-150 ease-in-out w-full ${
+              !parking ? "bg-white text-black" : "bg-slate-600 text-white"
+            }`}>
+            yes
+          </button>
+
+          <button
+            type="button"
+            id="parking"
+            value={false}
+            onClick={onchange}
+            className={`ml-3 px-7 py-3 font-medium text-sm uppercase shadow-md rounded hover:shadow-lg focus:shadow-lg  active:shadow-lg transition duration-150 ease-in-out w-full ${
+              parking ? "bg-white text-black" : "bg-slate-600 text-white"
+            }`}>
+            no
+          </button>
+        </div>
+        <p className="text-lg font-semibold mt-6">Furnished</p>
+
+        <div className="flex py-4">
+          <button
+            type="button"
+            id="furnished"
+            value={true}
+            onClick={onchange}
+            className={`mr-3 px-7 py-3 font-medium text-sm uppercase shadow-md rounded hover:shadow-lg focus:shadow-lg  active:shadow-lg transition duration-150 ease-in-out w-full ${
+              !furnished ? "bg-white text-black" : "bg-slate-600 text-white"
+            }`}>
+            yes
+          </button>
+
+          <button
+            type="button"
+            id="furnished"
+            value={true}
+            onClick={onchange}
+            className={`ml-3 px-7 py-3 font-medium text-sm uppercase shadow-md rounded hover:shadow-lg focus:shadow-lg  active:shadow-lg transition duration-150 ease-in-out w-full ${
+              furnished ? "bg-white text-black" : "bg-slate-600 text-white"
+            }`}>
+            no
+          </button>
         </div>
       </form>
     </main>
