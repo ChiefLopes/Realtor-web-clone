@@ -53,7 +53,7 @@ const CreateListing = () => {
           maxLength="32"
           minLength="10"
           required
-          className="w-full mb-6 px-4 py-2 mt-2 text-md  text-zinc-700 bg-white border-2 border-blue-300 rounded transition ease-in-out outline-none "
+          className="w-full mb-6 px-4 py-2 mt-2 text-md  text-grey-700 bg-white border-2 border-grey-300 rounded transition ease-in-out outline-none focus:text-grey-700 focus:bg-white focus:border-slate-600 mb-6"
         />
       </form>
     </main>
