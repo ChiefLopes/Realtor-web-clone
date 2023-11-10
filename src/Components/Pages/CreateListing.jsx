@@ -8,9 +8,22 @@ const CreateListing = () => {
     bathrooms: 1,
     parking: false,
     furnished: true,
+    address: "",
+    description: "",
+    offer: true,
   });
 
-  const { type, name, bedrooms, bathrooms, parking, furnished } = formData;
+  const {
+    type,
+    name,
+    bedrooms,
+    bathrooms,
+    parking,
+    furnished,
+    address,
+    description,
+    offer,
+  } = formData;
 
   function onChange(e) {}
 
@@ -134,6 +147,51 @@ const CreateListing = () => {
             onClick={onchange}
             className={`ml-3 px-7 py-3 font-medium text-sm uppercase shadow-md rounded hover:shadow-lg focus:shadow-lg  active:shadow-lg transition duration-150 ease-in-out w-full ${
               furnished ? "bg-white text-black" : "bg-slate-600 text-white"
+            }`}>
+            no
+          </button>
+        </div>
+        <p className="text-lg font-semibold">Address</p>
+        <textarea
+          type="text"
+          id="address"
+          value={address}
+          onChange={onChange}
+          placeholder="Address"
+          required
+          className="w-full mb-6 px-4 py-2  text-md  text-grey-700 bg-white border-2 border-grey-300 rounded transition ease-in-out outline-none focus:text-grey-700 focus:bg-white focus:border-slate-600 mb-6"
+        />
+        <p className="text-lg font-semibold">Description</p>
+        <textarea
+          type="text"
+          id="description"
+          value={description}
+          onChange={onChange}
+          placeholder="Description"
+          required
+          className="w-full mb-6 px-4 py-2 text-md  text-grey-700 bg-white border-2 border-grey-300 rounded transition ease-in-out outline-none focus:text-grey-700 focus:bg-white focus:border-slate-600 mb-6"
+        />
+        <p className="text-lg font-semibold">Offer</p>
+
+        <div className="flex mb-6">
+          <button
+            type="button"
+            id="offer"
+            value={true}
+            onClick={onchange}
+            className={`mr-3 px-7 py-3 font-medium text-sm uppercase shadow-md rounded hover:shadow-lg focus:shadow-lg  active:shadow-lg transition duration-150 ease-in-out w-full ${
+              !offer ? "bg-white text-black" : "bg-slate-600 text-white"
+            }`}>
+            yes
+          </button>
+
+          <button
+            type="button"
+            id="offer"
+            value={true}
+            onClick={onchange}
+            className={`ml-3 px-7 py-3 font-medium text-sm uppercase shadow-md rounded hover:shadow-lg focus:shadow-lg  active:shadow-lg transition duration-150 ease-in-out w-full ${
+              offer ? "bg-white text-black" : "bg-slate-600 text-white"
             }`}>
             no
           </button>
