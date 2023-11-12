@@ -72,7 +72,7 @@ const CreateListing = () => {
           maxLength="32"
           minLength="10"
           required
-          className="w-full mb-6 px-4 py-2 mt-2 text-md  text-grey-700 bg-white border-2 border-grey-300 rounded transition ease-in-out outline-none focus:text-grey-700 focus:bg-white focus:border-slate-600 mb-6"
+          className="w-full mb-6 px-4 py-2 mt-2 text-md  text-gray-700 bg-white border-2 border-grey-300 rounded transition ease-in-out outline-none focus:text-grey-700 focus:bg-white focus:border-slate-600 mb-6"
         />
 
         <div className="flex space-x-6">
@@ -82,7 +82,7 @@ const CreateListing = () => {
               type="number"
               id="bedrooms"
               value={bedrooms}
-              className="w-full h-9 outline-none text-center  px-4 py-2 text-xl text-grey-700 bg-white border-2 border-grey-700 rounded transition duration-150 ease-in-out focus:text-grey-700 focus:bg-white focus:outline-none focus:border-slate-600"
+              className="w-full h-9 outline-none text-center  px-4 py-2 text-xl text-gray-700 bg-white border-2 border-grey-700 rounded transition duration-150 ease-in-out focus:text-grey-700 focus:bg-white focus:outline-none focus:border-slate-600"
               min="1"
               max="50"
               required
@@ -95,7 +95,7 @@ const CreateListing = () => {
               type="number"
               id="bathrooms"
               value={bathrooms}
-              className="w-full h-9 outline-none text-center px-4 py-2 text-xl text-grey-700 bg-white border-2 border-grey-700 rounded transition duration-150 ease-in-out focus:text-grey-700 focus:bg-white focus:outline-none focus:border-slate-600"
+              className="w-full h-9 outline-none text-center px-4 py-2 text-xl text-gray-700 bg-white border-2 border-grey-700 rounded transition duration-150 ease-in-out focus:text-grey-700 focus:bg-white focus:outline-none focus:border-slate-600"
               min="1"
               max="50"
               required
@@ -161,7 +161,7 @@ const CreateListing = () => {
           onChange={onChange}
           placeholder="Address"
           required
-          className="w-full mb-6 px-4 py-2  text-md  text-grey-700 bg-white border-2 border-grey-300 rounded transition ease-in-out outline-none focus:text-grey-700 focus:bg-white focus:border-slate-600 mb-6"
+          className="w-full mb-6 px-4 py-2  text-md  text-gray-700 bg-white border-2 border-grey-300 rounded transition ease-in-out outline-none focus:text-grey-700 focus:bg-white focus:border-slate-600 mb-6"
         />
         <p className="text-lg font-semibold">Description</p>
         <textarea
@@ -171,7 +171,7 @@ const CreateListing = () => {
           onChange={onChange}
           placeholder="Description"
           required
-          className="w-full mb-6 px-4 py-2 text-md  text-grey-700 bg-white border-2 border-grey-300 rounded transition ease-in-out outline-none focus:text-grey-700 focus:bg-white focus:border-slate-600 mb-6"
+          className="w-full mb-6 px-4 py-2 text-md  text-gray-700 bg-white border-2 border-grey-300 rounded transition ease-in-out outline-none focus:text-grey-700 focus:bg-white focus:border-slate-600 mb-6"
         />
         <p className="text-lg font-semibold">Offer</p>
 
@@ -205,11 +205,12 @@ const CreateListing = () => {
               <input
                 type="number"
                 id="regularPrice"
-                value={regularPrice}
-                              className="text-center"
-                              min="50"
-                              max="400000000"
-                              required
+                              value={regularPrice}
+                              className="w-full mb-6 px-4 py-2 text-md  text-gray-700 bg-white border-2 border-grey-300 rounded transition ease-in-out outline-none focus:text-grey-700 focus:bg-white focus:border-slate-600 text-center" 
+                onChange={onChange}
+                min="50"
+                max="400000000"
+                required
               />
             </div>
           </div>
