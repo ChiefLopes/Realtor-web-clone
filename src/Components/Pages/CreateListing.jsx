@@ -11,6 +11,7 @@ const CreateListing = () => {
     address: "",
     description: "",
     offer: true,
+    regularPrice: 0,
   });
 
   const {
@@ -23,6 +24,7 @@ const CreateListing = () => {
     address,
     description,
     offer,
+    regularPrice,
   } = formData;
 
   function onChange(e) {}
@@ -195,6 +197,22 @@ const CreateListing = () => {
             }`}>
             no
           </button>
+        </div>
+        <div>
+          <div className="">
+            <p className="text-lg font-semibold ">Regular Price </p>
+            <div>
+              <input
+                type="number"
+                id="regularPrice"
+                value={regularPrice}
+                              className="text-center"
+                              min="50"
+                              max="400000000"
+                              required
+              />
+            </div>
+          </div>
         </div>
       </form>
     </main>
