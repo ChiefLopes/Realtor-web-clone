@@ -5,7 +5,8 @@ import OAuth from "../Sections/OAuth";
 import { sendPasswordResetEmail, getAuth } from "firebase/auth";
 import { toast } from "react-toastify";
 const ForgotPassword = () => {
-  // Created the form data hook
+    // Created the form data hook for form validation
+    
   const [email, setEmail] = useState("");
 
   const onChange = (e) => {
